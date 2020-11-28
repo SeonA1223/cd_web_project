@@ -8,9 +8,12 @@ import leftarrow from '../images/screen3_leftarrow.png';
 import rightarrow from '../images/screen3_rightarrow.png';
 import Post01 from './Postit01';
 
+import postit01 from '../images/screen3_1_postit_dummy_1.png';
+import postit02 from '../images/screen3_1_postit_dummy_2.png'
+
 const Container = styled.div`
 	width: 99vw;
-	height: 1085px;
+	height: 80vh;
 	overflow: hidden;
 `;
 
@@ -23,9 +26,71 @@ const SliderContainer = styled.div`
 	flex-direction: row;
 `;
 
+const Postit01 = styled.img`
+    width: 10vw;
+    height: auto;
+    position:relative;
+	visibility: hidden;
+    z-index: 11;
+    margin-top: -15%;
+    left: -25%;
+
+`;
+
+const Postit02 = styled.img`
+    width: 10vw;
+    height: auto;
+    position:relative;
+	visibility: hidden;
+    z-index: 13;
+    margin-top: -30%;
+    left: 5%;
+
+`;
+
+const Postit03 = styled.img`
+    width: 100%;
+    height: auto;
+    position:relative;
+    z-index: 14;
+    margin-top: -30%;
+    left: 5%;
+
+`;
+
+const Postit04 = styled.img`
+    width: 100%;
+    height: auto;
+    position:relative;
+    z-index: 15;
+    margin-top: -30%;
+    left: -10%;
+
+`;
+
+const Postit05 = styled.img`
+    width: 100%;
+    height: auto;
+    position:relative;
+    z-index: 16;
+    margin-top: -50%;
+    left: 5%;
+
+`;
+
+const Postit06 = styled.img`
+    width: 100%;
+    height: auto;
+    position:relative;
+    z-index: 17;
+    margin-top: -30%;
+    left: 5%;
+
+`;
+
 const Box = styled.div`
 	width: 50vw;
-`;
+`
 
 const Box1 = styled.div`
 	width: 50vw;
@@ -33,7 +98,7 @@ const Box1 = styled.div`
 
 const Img1 = styled.img`
 	width: 100vw;
-	hegith: auto;
+	height: auto;
 `;
 
 const Img2 = styled.img`
@@ -48,16 +113,36 @@ const Img3 = styled.img`
 `;
 const LeftArrow = styled.div`
 	position: relative;
-	z-index: 100;
+	z-index: 10;
+	width : 95vw;
 	margin-top: -35%;
 	margin-left: 5%;
 `;
 
 const TOTAL_SLIDES = 2;
 
+
+
 const Carousel = () => {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const slideRef = useRef(null);
+	const postit01Ref = useRef(null);
+	const postit02Ref = useRef(null);
+
+
+	const showPost01 = () => {
+		return (
+			postit01Ref.current.style.visibility = "visible",
+			setTimeout(() => {postit02Ref.current.style.visibility = "visible"}, 1000)
+			)
+		};
+
+		const hidePost01 = () => {
+			return (
+				postit01Ref.current.style.visibility = "hidden",
+				postit02Ref.current.style.visibility = "hidden"
+				)
+			};
 
 	const nextSlide = () => {
 		if (currentSlide >= TOTAL_SLIDES) {
@@ -80,10 +165,12 @@ const Carousel = () => {
 		switch (currentSlide) {
 			case 0:
 				slideRef.current.style.transform = `translateX(0%)`;
-				setTimeout(Post01, 1000);
+				setTimeout(showPost01, 2000);
 				break;
 			case 1:
 				slideRef.current.style.transform = `translateX(-50%)`;
+				setTimeout(hidePost01, 1000);
+
 				break;
 			case 2:
 				slideRef.current.style.transform = `translateX(-100%)`;
@@ -97,13 +184,19 @@ const Carousel = () => {
 				<SliderContainer ref={slideRef}>
 					<Box1 idx={1}>
 						<Img1 src={img1} alt='character1' />
-					</Box1>
+                    </Box1>
+                    <Postit01 ref={postit01Ref} src={postit01} />
+					<Postit02 ref={postit02Ref} src={postit02} />
 					<Box idx={2}>
 						<Img1 src={img2} alt='character2' />
 					</Box>
+					<Postit03 src={postit01} />
+					<Postit04  src={postit02} />
 					<Box idx={3}>
 						<Img1 src={img1} alt='character3' />
 					</Box>
+					<Postit05  src={postit01} />
+					<Postit06  src={postit02} />
 				</SliderContainer>
 				<LeftArrow>
 					{currentSlide <= 0 ? (

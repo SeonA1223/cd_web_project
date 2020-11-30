@@ -23,17 +23,21 @@ const ImageMap = styled.img`
 	z-index: 100;
 	top: -240vw;
 	left: 25%;
-	visibility: hidden;
+	opacity: 0;
+
+	&:hover {
+		opacity: 99;
+	}
 `;
 
 const Main = () => {
 	const mapref = useRef(null);
 
-	useEffect(() => {
-		setTimeout(() => {
-			mapref.current.style.visibility = 'visible';
-		}, 3000);
-	});
+	// useEffect(() => {
+	// 	setTimeout(() => {
+	// 		mapref.current.style.visibility = 'visible';
+	// 	}, 3000);
+	// });
 
 	return (
 		<>
@@ -41,7 +45,9 @@ const Main = () => {
 
 			<Image2 src={img2} />
 
-			<ImageMap ref={mapref} src={map} />
+			<ImageMap src={map} />
+
+			{/* <ImageMap ref={mapref} src={map} /> */}
 		</>
 	);
 };

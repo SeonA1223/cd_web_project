@@ -67,7 +67,7 @@ const Postit04 = styled.img`
 	position: relative;
 	visibility: hidden;
 	z-index: 15;
-	margin-top: -30%;
+	margin-top: 10%;
 	left: 3%;
 `;
 

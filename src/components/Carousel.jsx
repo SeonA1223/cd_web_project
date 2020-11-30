@@ -32,7 +32,7 @@ const SliderContainer = styled.div`
 `;
 
 const Postit01 = styled.img`
-	width: 10vw;
+	width: 15vw;
 	height: auto;
 	position: relative;
 	visibility: hidden;
@@ -42,7 +42,7 @@ const Postit01 = styled.img`
 `;
 
 const Postit02 = styled.img`
-	width: 10vw;
+	width: 15vw;
 	height: auto;
 	position: relative;
 	visibility: hidden;
@@ -52,7 +52,7 @@ const Postit02 = styled.img`
 `;
 
 const Postit03 = styled.img`
-	width: 20vw;
+	width: 15vw;
 	height: auto;
 	position: relative;
 	visibility: hidden;
@@ -62,7 +62,7 @@ const Postit03 = styled.img`
 `;
 
 const Postit04 = styled.img`
-	width: 20vw;
+	width: 15vw;
 	height: auto;
 	position: relative;
 	visibility: hidden;
@@ -89,15 +89,7 @@ const Postit06 = styled.img`
 	left: 5%;
 `;
 
-const Box2 = styled.div`
-	position: relative;
-	width: 40vw;
-	left: -10% ;
-	margin-rightL 10vw;
-`;
-
 const Box1 = styled.div`
-	position: relative;
 	width: 50vw;
 `;
 
@@ -109,14 +101,14 @@ const Img1 = styled.img`
 `;
 
 const Img2 = styled.img`
-	width: 15vw;
+	width: 10vw;
 	height: auto;
 	margin-left: 10%;
 `;
 
 const Img3 = styled.img`
-	width: 15vw;
-	margin-left: 50%;
+	width: 10vw;
+	margin-left: 60%;
 `;
 
 const LeftArrow = styled.div`
@@ -185,15 +177,16 @@ const Carousel = () => {
 			case 0:
 				slideRef.current.style.transform = `translateX(0%)`;
 				setTimeout(showPost01, 1000);
+				setTimeout(hidePost02, 1000);
 				break;
 			case 1:
-				slideRef.current.style.transform = `translateX(-65%)`;
+				slideRef.current.style.transform = `translateX(-80%)`;
 				setTimeout(hidePost01, 1000);
 				setTimeout(showPost02, 1500);
-
 				break;
 			case 2:
-				slideRef.current.style.transform = `translateX(-140%)`;
+				slideRef.current.style.transform = `translateX(-160%)`;
+				setTimeout(hidePost02, 1000);
 				break;
 		}
 	}, [currentSlide]);
@@ -207,9 +200,9 @@ const Carousel = () => {
 					</Box1>
 					<Postit01 ref={postit01Ref} src={postit01} />
 					<Postit02 ref={postit02Ref} src={postit02} />
-					<Box2 idx={2}>
+					<Box1 idx={2}>
 						<Img1 src={img2} alt='character2' />
-					</Box2>
+					</Box1>
 					<Postit03 ref={postit03Ref} src={postit03} />
 					<Postit04 ref={postit04Ref} src={postit04} />
 

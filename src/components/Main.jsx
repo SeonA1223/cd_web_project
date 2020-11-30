@@ -32,7 +32,7 @@ const Main = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			mapref.current.style.visibility = 'visible';
-		}, 2000);
+		}, 3000);
 	});
 
 	return (

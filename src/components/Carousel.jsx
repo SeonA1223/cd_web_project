@@ -12,8 +12,8 @@ import Post01 from './Postit01';
 import postit01 from '../images/screen3_1_postit_1.png';
 import postit02 from '../images/screen3_1_postit_2.png';
 
-import postit03 from '../images/screen3_2_postit_2.png';
-import postit04 from '../images/screen3_2_postit_1.png';
+import postit04 from '../images/screen3_2_postit_2.png';
+import postit03 from '../images/screen3_2_postit_1.png';
 
 const Container = styled.div`
 	position: relative;
@@ -68,7 +68,7 @@ const Postit04 = styled.img`
 	visibility: hidden;
 	z-index: 15;
 	margin-top: 10%;
-	left: 3%;
+	left: -3%;
 `;
 
 const Postit05 = styled.img`

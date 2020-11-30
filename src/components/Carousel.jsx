@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import styled from 'styled-components';
 
-import img1 from '../images/screen3_character_dummy_1.png';
-import img2 from '../images/screen3_character_dummy_2.png';
+import img1 from '../images/screen3_1_character.png';
+import img2 from '../images/screen3_2_character.png';
 import img3 from '../images/screen3_3_character.png';
 import leftarrow from '../images/screen3_leftarrow_2.png';
 import rightarrow from '../images/screen3_rightarrow_3.png';
@@ -203,12 +203,12 @@ const Carousel = () => {
 			<Container>
 				<SliderContainer ref={slideRef}>
 					<Box1 idx={1}>
-						<Img1 src={img3} alt='character1' />
+						<Img1 src={img1} alt='character1' />
 					</Box1>
 					<Postit01 ref={postit01Ref} src={postit01} />
 					<Postit02 ref={postit02Ref} src={postit02} />
 					<Box2 idx={2}>
-						<Img1 src={img3} alt='character2' />
+						<Img1 src={img2} alt='character2' />
 					</Box2>
 					<Postit03 ref={postit03Ref} src={postit03} />
 					<Postit04 ref={postit04Ref} src={postit04} />
